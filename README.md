@@ -40,5 +40,5 @@ virsh pool-start vm_pool
 
 virsh pool-autostart vm_pool
  
- 
- 
+# For work with Windows OS you need connect to them across VNC. Use VNC Viewer https://www.realvnc.com/en/connect/download/viewer/
+ virsh vncdisplay NAME_MASHINE
