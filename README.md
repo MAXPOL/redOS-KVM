@@ -1,5 +1,7 @@
 # redOS-KVM
 
+#Example create virtual mashine
+
 virt-install --name NAME --ram=7000 --vcpus=1 --os-type windows 
 --os-variant win7 --disk pool=virtual_os,size=40,bus=virtio,cache=none 
 --network=bridge:br0,model=virtio --graphics vnc,password=PASSWORD 
@@ -24,4 +26,19 @@ virt-install --name wxpx32 --ram=3000 --vcpus=1 --os-type windows --os-variant w
 --disk device=cdrom,path=/mount/programm/OS/virtio-win-0.1.141.iso  
 --boot cdrom,hd
 
- virsh attach-disk ws2008r2x64 /iso/virtio-win-0.1.141.iso hda --type cdrom
+#Connect additional disk in created OS
+
+virsh attach-disk ws2008r2x64 /iso/virtio-win-0.1.141.iso hda --type cdrom
+
+#Create pool storage
+
+virsh pool-define-as vm_pool --type dir --target /VM/
+
+virsh pool-build vm_pool
+
+virsh pool-start vm_pool
+
+virsh pool-autostart vm_pool
+ 
+ 
+ 
