@@ -42,3 +42,8 @@ virsh pool-autostart vm_pool
  
 # For work with Windows OS you need connect to them across VNC. Use VNC Viewer https://www.realvnc.com/en/connect/download/viewer/
  virsh vncdisplay NAME_MASHINE
+ 
+ 
+# For create bridge connect
+cd /etc/sysconfig/network-scripts
+copy in folder file ifcfg-br0
