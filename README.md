@@ -46,4 +46,7 @@ virsh pool-autostart vm_pool
  
 # For create bridge connect
 cd /etc/sysconfig/network-scripts
+
 copy in folder file ifcfg-br0
+
+In file you real network car add string : BRIDGE=br0
